@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sức Khỏe Toàn Diện</title>
+    <link rel="stylesheet" href="style.css">
+    
+    <!-- Tải thư viện THREE.js -->
+    <script src="https://unpkg.com/three@0.128.0/build/three.min.js"></script>
+    
+    <!-- Tải OrbitControls.js -->
+    <script src="https://unpkg.com/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
+    
+    <!-- Tải GLTFLoader.js từ unpkg -->
+    <script src="https://unpkg.com/three@0.128.0/examples/js/loaders/GLTFLoader.js"></script>
+</head>
+<body>
+    <header>
+        <h1>Sức Khỏe Toàn Diện</h1>
+        <img src="logo.png" alt="Logo" id="logo" style="width: 100px; height: auto; margin-right: 20px;">
+        <nav>
+            <ul>
+                <li><a href="index.html">Trang chủ</a></li>
+                <li><a href="login.html">Đăng nhập</a></li>
+                <li><a href="health.html">Sức khỏe</a></li>
+                <li><a href="information.html">Thông tin</a></li>
+                <li><a href="account.html">Tài khoản</a></li>
+                <li><a href="menu.html">Thực đơn</a></li>
+                <li><a href="reminder.html">Nhắc hẹn</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <div id="model-container">
+            <h3>Hình nộm huyệt vị 3D ở đây nha</h3>
+            <div id="3d-model" style="width: 100%; height: 80vh; background-color: #ffffff;">
+                <!-- Mô hình 3D sẽ được hiển thị ở đây -->
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Sức Khỏe Toàn Diện</p>
+    </footer>
+
+    <script>
+        // Đảm bảo GLTFLoader đã được tải đúng cách
+
+        // Tạo scene, camera, và renderer
+        const scene = new THREE.Scene();
+        const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+        const renderer = new THREE.WebGLRenderer({ antialias: true });
+        renderer.setSize(window.innerWidth, window.innerHeight);
+        document.getElementById('3d-model').appendChild(renderer.domElement);
+
+        // Ánh sáng
+        const ambientLight = new THREE.AmbientLight(0x404040, 2); // Ánh sáng môi trường mạnh
+        scene.add(ambientLight);
+
+        const directionalLight = new THREE.DirectionalLight(0xffffff, 1.5); // Ánh sáng hướng mạnh
+        directionalLight.position.set(10, 10, 10).normalize();
+        scene.add(directionalLight);
+
+        // Tải mô hình 3D từ thư mục gốc
+        const loader = new THREE.GLTFLoader();
+        loader.load('3d-model.glb', function (gltf) {
+            const model = gltf.scene;
+            model.scale.set(300, 300, 300); // Điều chỉnh kích thước mô hình
+            model.position.set(0, 0, 0); // Điều chỉnh vị trí mô hình
+            scene.add(model);
+            console.log("Mô hình đã tải thành công!");
+        }, undefined, function (error) {
+            console.error("Lỗi khi tải mô hình:", error);
+        });
+
+        // Điều khiển camera
+        const controls = new THREE.OrbitControls(camera, renderer.domElement);
+        controls.enableDamping = true;
+        controls.dampingFactor = 0.1;
+        controls.minDistance = 2;
+        controls.maxDistance = 10;
+
+        camera.position.set(0, 1, 5);
+
+        // Render vòng lặp
+        function animate() {
+            requestAnimationFrame(animate);
+            controls.update();
+            renderer.render(scene, camera);
+        }
+
+        animate();
+    </script>
+</body>
+</html>

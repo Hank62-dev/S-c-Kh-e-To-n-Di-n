@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tài Khoản - Sức Khỏe Toàn Diện</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Sức Khỏe Toàn Diện</h1>
+        <img src="logo.png" alt="Logo" id="logo" style="width: 100px; height: auto; margin-right: 20px;">
+        <nav>
+            <ul>
+                <li><a href="index.html">Trang chủ</a></li>
+                <li><a href="login.html">Đăng nhập</a></li>
+                <li><a href="health.html">Sức khỏe</a></li>
+                <li><a href="information.html">Thông tin</a></li>
+                <li><a href="account.html">Tài khoản</a></li>
+                <li><a href="menu.html">Thực đơn</a></li>
+                <li><a href="reminder.html">Nhắc hẹn</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <h2>Thông Tin Tài Khoản</h2>
+        <div class="account-container">
+            <img src="avatar-placeholder.png" alt="Avatar" class="avatar">
+            <p><strong>Tên đăng nhập:</strong> <span id="username-display">Hank6226</span></p>
+            <p><strong>Email:</strong> <span id="email-display">huyvog6226@gmail.com</span></p>
+            <button id="edit-account">Chỉnh sửa thông tin</button>
+        </div>
+    </main>
+    <footer>
+        <p>&copy; 2025 Sức Khỏe Toàn Diện</p>
+    </footer>
+    <script>
+        // Giả lập thông tin người dùng
+        const userInfo = {
+            username: "Hank6226",
+            email: "huyvog6226@gmail.com"
+        };
+
+        // Hiển thị thông tin người dùng
+        document.getElementById('username-display').textContent = userInfo.username;
+        document.getElementById('email-display').textContent = userInfo.email;
+    </script>
+</body>
+</html>

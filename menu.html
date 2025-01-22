@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thực Đơn - Sức Khỏe Toàn Diện</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Sức Khỏe Toàn Diện</h1>
+        <img src="logo.png" alt="Logo" id="logo" style="width: 100px; height: auto; margin-right: 20px;">
+        <nav>
+            <ul>
+                <li><a href="index.html">Trang chủ</a></li>
+                <li><a href="login.html">Đăng nhập</a></li>
+                <li><a href="health.html">Sức khỏe</a></li>
+                <li><a href="information.html">Thông tin</a></li>
+                <li><a href="account.html">Tài khoản</a></li>
+                <li><a href="menu.html">Thực đơn</a></li>
+                <li><a href="reminder.html">Nhắc hẹn</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <h2>Lộ Trình Ăn Uống Hằng Ngày</h2>
+        <form id="menu-form">
+            <div class="form-group">
+                <label for="vitamin">Cần bổ sung vitamin:</label>
+                <select id="vitamin" required>
+                    <option value="A">Vitamin A</option>
+                    <option value="B">Vitamin B</option>
+                    <option value="C">Vitamin C</option>
+                    <option value="D">Vitamin D</option>
+                </select>
+            </div>
+            <button type="submit">Tìm Kiếm Thực Phẩm</button>
+        </form>
+        <div id="food-suggestions">
+            <h3>Thực phẩm cần bổ sung:</h3>
+            <ul>
+                <li>Thực phẩm cho Vitamin A: Cà rốt, Khoai lang</li>
+                <li>Thực phẩm cho Vitamin B: Thịt, Cá, Trứng</li>
+                <li>Thực phẩm cho Vitamin C: Cam, Kiwi, Dâu tây</li>
+                <li>Thực phẩm cho Vitamin D: Cá hồi, Nấm</li>
+            </ul>
+        </div>
+    </main>
+    <footer>
+        <p>&copy; 2025 Sức Khỏe Toàn Diện</p>
+    </footer>
+</body>
+</html>

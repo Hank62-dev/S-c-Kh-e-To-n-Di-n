@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nhắc Hẹn - Sức Khỏe Toàn Diện</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Sức Khỏe Toàn Diện</h1>
+        <img src="logo.png" alt="Logo" id="logo" style="width: 100px; height: auto; margin-right: 20px;">
+        <nav>
+            <ul>
+                <li><a href="index.html">Trang chủ</a></li>
+                <li><a href="login.html">Đăng nhập</a></li>
+                <li><a href="health.html">Sức khỏe</a></li>
+                <li><a href="information.html">Thông tin</a></li>
+                <li><a href="account.html">Tài khoản</a></li>
+                <li><a href="menu.html">Thực đơn</a></li>
+                <li><a href="reminder.html">Nhắc hẹn</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <h2>Nhắc Hẹn</h2>
+        <div class="reminder-container">
+            <form id="reminder-form">
+                <div class="form-group">
+                    <label for="reminder-title">Tiêu đề nhắc hẹn:</label>
+                    <input type="text" id="reminder-title" required>
+                </div>
+                <div class="form-group">
+                    <label for="reminder-time">Thời gian nhắc:</label>
+                    <input type="datetime-local" id="reminder-time" required>
+                </div>
+                <button type="submit">Tạo Nhắc Hẹn</button>
+            </form>
+        </div>
+    </main>
+    <footer>
+        <p>&copy; 2025 Sức Khỏe Toàn Diện</p>
+    </footer>
+</body>
+</html>
